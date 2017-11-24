@@ -3,7 +3,7 @@ import numpy as np
 
 def one_step_lookahead(environment, state, V, discount_factor):
     """
-    Helper function to calculate a state-value function.
+    Helper function to calculate a action-value function.
 
     :param environment: Initialized OpenAI gym environment object.
     :param state: Agent's state to consider (integer).
@@ -25,7 +25,7 @@ def one_step_lookahead(environment, state, V, discount_factor):
 
 def policy_evaluation(policy, environment, discount_factor=1.0, theta=1e-9, max_iter=1e9):
     """
-    Evaluate a policy given a deterministic environment.
+    Evaluate a policy given a stochastic environment.
 
     :param policy: Matrix of a size nSxnA, each cell represents a probability of taking action a in state s.
     :param environment: Initialized OpenAI gym environment object.
@@ -38,7 +38,7 @@ def policy_evaluation(policy, environment, discount_factor=1.0, theta=1e-9, max_
     """
 
     # Number of evaluation iterations
-    evaluation_iterations = 1
+    evaluation_iterations = 0
 
     # Initialize a value function for each state as zero
     V = np.zeros(environment.nS)
@@ -94,7 +94,7 @@ def policy_iteration(environment, discount_factor=1.0, max_iter=1e9):
     policy = np.ones([environment.nS, environment.nA]) / environment.nA
 
     # Initialize counter of evaluated policies
-    evaluated_policies = 1
+    evaluated_policies = 0
 
     # Repeat until convergence or critical number of iterations reached
     for i in range(int(max_iter)):
@@ -119,7 +119,7 @@ def policy_iteration(environment, discount_factor=1.0, max_iter=1e9):
 
             # If action didn't change
             if current_action != best_action:
-                stable_policy = True
+                stable_policy = False
 
             # Greedy policy update
             policy[state] = np.eye(environment.nA)[best_action]
