@@ -3,7 +3,7 @@ import numpy as np
 
 def one_step_lookahead(environment, state, V, discount_factor):
     """
-    Helper function to calculate a state-value function.
+    Helper function to calculate a action-value function.
 
     :param environment: Initialized OpenAI gym environment object.
     :param state: Agent's state to consider (integer).
@@ -25,7 +25,7 @@ def one_step_lookahead(environment, state, V, discount_factor):
 
 def policy_evaluation(policy, environment, discount_factor=1.0, theta=1e-9, max_iter=1e9):
     """
-    Evaluate a policy given a deterministic environment.
+    Evaluate a policy given a stochastic environment.
 
     :param policy: Matrix of a size nSxnA, each cell represents a probability of taking action a in state s.
     :param environment: Initialized OpenAI gym environment object.
