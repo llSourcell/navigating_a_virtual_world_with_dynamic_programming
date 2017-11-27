@@ -21,7 +21,7 @@ This is the code for [this](https://youtu.be/5R2vErZn0yw) video on Youtube by Si
 * numpy
 * openAI's gym https://github.com/openai/gym
 
-## Setup
+## Normal Setup
 
 ```bash
 git clone https://github.com/llSourcell/navigating_a_virtual_world_with_dynamic_programming.git
@@ -31,6 +31,14 @@ source ./venv/bin/activate
 pip install -r requirements.txt
 ```
 
+## Anaconda Setup
+
+```bash
+git clone https://github.com/llSourcell/navigating_a_virtual_world_with_dynamic_programming.git
+cd navigating_a_virtual_world_with_dynamic_programming
+conda env create
+source activate rl-intro
+```
 ## Usage
 
 Just run '**python frozen_lake.py**' in terminal
