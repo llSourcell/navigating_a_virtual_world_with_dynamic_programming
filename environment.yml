@@ -1,0 +1,12 @@
+name: rl-intro
+channels:
+- defaults
+dependencies:
+- h5py=2.7.*
+- keras=2.0.*
+- numpy=1.11.*
+- python=3.6.*
+- tensorflow=1.2.*
+- pip:
+  - gym>=0.9.4
+
